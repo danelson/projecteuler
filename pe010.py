@@ -28,4 +28,7 @@ def eratosthenes(n):
 
 	
 if __name__ == "__main__":
-	print eratosthenes(2000000)
+	start = time.time()
+	result = eratosthenes(2000000)
+	elapsed = (time.time() - start)
+	print "result %s returned in %s seconds." % (result,elapsed)

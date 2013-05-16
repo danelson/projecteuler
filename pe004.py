@@ -1,9 +1,12 @@
-#A palindromic number reads the same both ways. The largest palindrome
-#made from the product of two 2-digit numbers is 9009 = 91  99.
+'''
+A palindromic number reads the same both ways. The largest palindrome
+made from the product of two 2-digit numbers is 9009 = 91  99.
 
-#Find the largest palindrome made from the product of two 3-digit numbers.
+Find the largest palindrome made from the product of two 3-digit numbers.
 
-#Answer = 906609
+Answer = 906609
+'''
+import time
 
 def palindrome():
 	value = 0
@@ -18,4 +21,7 @@ def palindrome():
 	return value
 				
 if __name__ == "__main__":
-	print palindrome()
+	start = time.time()
+	result = palindrome()
+	elapsed = (time.time() - start)
+	print "result %s returned in %s seconds." % (result,elapsed)

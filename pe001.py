@@ -1,6 +1,10 @@
-#Add all the natural numbers below one thousand that are multiples of 3 or 5.
-#Answer: 233168
+'''
+Add all the natural numbers below one thousand that are multiples of 3 or 5.
 
+Answer: 233168
+'''
+
+import time
 
 def multiples3and5(x):
 	value = 0
@@ -10,4 +14,7 @@ def multiples3and5(x):
 	return value
 
 if __name__ == "__main__":
-	print multiples3and5(1000)
+	start = time.time()
+	result = multiples3and5(1000)
+	elapsed = (time.time() - start)
+	print "result %s returned in %s seconds." % (result,elapsed)

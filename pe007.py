@@ -1,33 +1,31 @@
-#By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can
-#see that the 6th prime is 13.
+'''
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can
+see that the 6th prime is 13.
 
-#What is the 10001st prime number?
+What is the 10001st prime number?
 
-#Answer 104743
+Answer = 104743
+'''
 
+import time
 import math
-	
-def find_primes(n):
-	primes = [2]
-	current = 3
+
+def find_n_primes(n):
+	primes = [2,3]
+	current = 5
 	flag = True
 	
-	while True:
-		if len(primes) == n:
-			return primes
-			
-		end = int(math.sqrt(current)) + 1
-		for i in range(2,end):
+	while len(primes) < n:
+		for i in range(2,int(math.sqrt(current)) + 1):
 			if (current%i) == 0:
-				flag = False
 				break
-		
-		if flag:
-			primes.append(current)
-		flag = True
-		current += 1
-			
-
-if __name__ == "__main__":
+			if i == int(math.sqrt(current)):
+				primes.append(current)
+		current += 2
+	return primes
 	
-	print find_primes(10001)[-1]
+if __name__ == "__main__":
+	start = time.time()
+	result = find_n_primes(10001)[-1]
+	elapsed = (time.time() - start)
+	print "result %s returned in %s seconds." % (result,elapsed)
