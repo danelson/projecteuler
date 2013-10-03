@@ -32,6 +32,6 @@ def square_of_sum(n):
 
 if __name__ == "__main__":
 	start = time.time()
-	result = square_of_sum(100) - sum_of_squares(100)
+	print square_of_sum(100) - sum_of_squares(100)
 	elapsed = (time.time() - start)
 	print "result %s returned in %s seconds." % (result,elapsed)

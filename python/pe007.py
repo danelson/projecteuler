@@ -21,7 +21,6 @@ def find_n_primes(n):
 				break
 			if i == int(math.sqrt(current)):
 				primes.append(current)
-				print current
 		current += 2
 	return primes
 	

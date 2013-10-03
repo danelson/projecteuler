@@ -12,14 +12,19 @@ def prime_factors(n):
 	'''
 	Returns all the prime factors of a positive integer
 	'''
-	factors = [2]
-	dividend = 3
+	factors = []
+	dividend = 2
 	while (n > 1):
-		if (n%dividend == 0):
+		while (n%dividend == 0):
 			factors.append(dividend)
 			n /= dividend
-		else:
-			dividend += 2
+
+		dividend = dividend + 1
+
+		if (dividend**2 > n):
+			if (n>1):
+				factors.append(n)
+			break
 
 	return factors	
 
